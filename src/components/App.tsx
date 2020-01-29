@@ -3,6 +3,7 @@ import '../App.css';
 import Header from "./Header";
 import Search from "./Search";
 import Movie from "./Movie";
+import axios from 'axios'
 
 const MOVIE_API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=d424e613"; // you should replace this with yours
 
@@ -23,8 +24,8 @@ const reducer = (state: any, action: { type: string; payload?: any; error?: any;
     case 'SEARCH_MOVIES_SUCCESS':
       return {
           ...state,
-        loading: false,
-        errorMessage: action.payload,
+          loading: false,
+          movies: action.payload,
       };
     case 'SEARCH_MOVIES_FAILURE':
       return {
@@ -41,12 +42,11 @@ const App: React.FC = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    fetch(MOVIE_API_URL)
-        .then(response => response.json())
+      axios.get(MOVIE_API_URL)
         .then(jsonResponse => {
           dispatch({
-            type: 'SEARCH_MOVIES_SUCCESS',
-            payload: jsonResponse.Search,
+              type: 'SEARCH_MOVIES_SUCCESS',
+              payload: jsonResponse.data.Search,
           })
         })
   }, []);
@@ -56,18 +56,19 @@ const App: React.FC = () => {
       type: 'SEARCH_MOVIES_REQUEST',
     });
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
-        .then(response => response.json())
+      axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
         .then(jsonResponse => {
-          if (jsonResponse.Response === 'True') {
-            dispatch({
-              type: 'SEARCH_MOVIES_SUCCESS',
-            });
-          } else {
-            dispatch({
-              type: 'SEARCH_MOVIES_FAILURE',
-            });
-          }
+            if (jsonResponse.data.Response === 'True') {
+                dispatch({
+                    type: 'SEARCH_MOVIES_SUCCESS',
+                    payload: jsonResponse.data.Search,
+                });
+            } else {
+                dispatch({
+                    type: 'SEARCH_MOVIES_FAILURE',
+                    payload: jsonResponse.data.Error,
+                });
+            }
         })
   };
 
@@ -84,9 +85,9 @@ const App: React.FC = () => {
         ) : errorMessage ? (
             <div className='errorMessage'>{errorMessage}</div>
         ) : (
-            movies.map((movie: { Title: any; }, index: any) => (
+            movies ? movies.map((movie: { Title: any; }, index: any) => (
                 <Movie key={`${index}-${movie.Title}`} movie={movie}/>
-            ))
+            )) : null
         )}
       </div>
     </div>
