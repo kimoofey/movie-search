@@ -1,36 +1,62 @@
-import React, {useState} from "react";
-//@ts-ignore
-const Search = (props) => {
-    const [searchValue, setSearchValue] = useState('');
+import React, {Component} from 'react';
+import axios from 'axios'
+import {action, observable} from "mobx";
+import {inject} from "mobx-react";
 
-    const handleSearchInputChanges = (e: { target: { value: React.SetStateAction<string>; }; }) => {
-        setSearchValue(e.target.value);
+@inject('rootStore')
+class Search extends Component {
+
+    @observable searchValue: string;
+
+    constructor(props: any) {
+        super(props);
+        this.searchValue = '';
+    }
+
+    @action setSearchValue(value: string) {
+        this.searchValue = value;
+    }
+
+    search(searchValue: string) {
+        // @ts-ignore
+        const {rootStore} = this.props;
+        rootStore.searchRequest();
+
+        axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+            .then(jsonResponse => {
+                if (jsonResponse.data.Response === 'True') {
+                    console.log(jsonResponse.data.Search);
+                    rootStore.searchSuccess(jsonResponse.data.Search);
+                } else {
+                    rootStore.searchFailure(jsonResponse.data.Error);
+                }
+            });
     };
 
-    const resetInputField = () => {
-        setSearchValue('');
+    handleSearchInputChanges = (e: any) => {
+        this.setSearchValue(e.target.value);
     };
 
-    const callSearchFunction = (e: { preventDefault: () => void; }) => {
+    callSearchFunction = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        props.search(searchValue);
-        resetInputField();
+        this.search(this.searchValue);
     };
 
-    return (
-        <form className='search'>
-            <input
-                value={searchValue}
-                onChange={handleSearchInputChanges}
-                type='text'
-            />
-            <input
-                onClick={callSearchFunction}
-                type='submit'
-                value='SEARCH'
-            />
-        </form>
-    )
-};
+    render() {
+        return (
+            <form className='search'>
+                <input
+                    onChange={this.handleSearchInputChanges}
+                    type='text'
+                />
+                <input
+                    onClick={this.callSearchFunction}
+                    type='submit'
+                    value='SEARCH'
+                />
+            </form>
+        )
+    }
+}
 
 export default Search;
