@@ -10,20 +10,20 @@ import {inject, observer} from "mobx-react";
 class App extends Component {
     render() {
         // @ts-ignore
-        const {rootStore} = this.props;
+        const {MainStore} = this.props.rootStore;
         return (
             <div className="App">
                 <Header text='HOOKED'/>
                 <Search/>
                 <p className='App-intro'>Sharing a few of our favourite movies</p>
                 <div className='movies'>
-                    {rootStore.loading && !rootStore.errorMessage ? (
+                    {MainStore.loading && !MainStore.errorMessage ? (
                         <span>loading...</span>
-                    ) : rootStore.errorMessage ? (
-                        <div className='errorMessage'>{rootStore.errorMessage}</div>
+                    ) : MainStore.errorMessage ? (
+                        <div className='errorMessage'>{MainStore.errorMessage}</div>
                     ) : (
                         // @ts-ignore
-                        rootStore.movies ? rootStore.movies.map((movie, index) => (
+                        MainStore.movies ? MainStore.movies.map((movie, index) => (
                             <Movie key={`${index}-${movie.Title}`} movie={movie}/>
                         )) : null
                     )}

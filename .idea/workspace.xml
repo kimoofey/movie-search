@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99c48644-8cc0-40cc-8f85-b988e845d35c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Movie.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/SearchStore.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1X4XH1Ab8qjo0nvUSFMvLc7obSe" />
@@ -38,29 +40,38 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="ts.external.directory.path" value="C:\Users\andrei_kim\WebstormProjects\movie-search\node_modules\typescript\lib" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Users\kimoo\WebstormProjects\movie-search\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kimoo\WebstormProjects\movie-search\src\view" />
       <recent name="C:\Users\andrei_kim\WebstormProjects\movie-search\src\components" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Debug" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,68 +84,58 @@
       <option name="presentableId" value="Default" />
       <updated>1580306248454</updated>
       <workItem from="1580306250664" duration="5960000" />
+      <workItem from="1580551563166" duration="15035000" />
     </task>
+    <task id="LOCAL-00001" summary="added mobx. changed structure">
+      <created>1580567340594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580567340594</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="828" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580311678159">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="828" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1580311678159" />
-    <state x="585" y="175" key="CommitChangelistDialog2" timestamp="1580306642594">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="585" y="175" key="CommitChangelistDialog2/0.0.1920.1160@0.0.1920.1160" timestamp="1580306642594" />
-    <state width="936" height="321" key="GridCell.Tab.0.bottom" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.0.center" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.0.left" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.0.right" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.1.bottom" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.1.center" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.1.left" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state width="936" height="321" key="GridCell.Tab.1.right" timestamp="1580312222465">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="936" height="321" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1580312222465" />
-    <state x="1103" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1580308773016">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="1103" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1580308773016" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Movie.tsx</url>
-          <line>5</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added mobx. changed structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mobx. changed structure" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="828" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="828" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" />
+    <state x="585" y="175" key="CommitChangelistDialog2" />
+    <state x="585" y="175" key="CommitChangelistDialog2/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.0.bottom" />
+    <state width="936" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.0.center" />
+    <state width="936" height="321" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.0.left" />
+    <state width="936" height="321" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.0.right" />
+    <state width="936" height="321" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.1.bottom" />
+    <state width="936" height="321" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.1.center" />
+    <state width="936" height="321" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.1.left" />
+    <state width="936" height="321" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" />
+    <state width="936" height="321" key="GridCell.Tab.1.right" />
+    <state width="936" height="321" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" />
+    <state x="1103" y="260" width="672" height="678" key="search.everywhere.popup" />
+    <state x="1103" y="260" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160@0.0.1920.1160" />
   </component>
 </project>
