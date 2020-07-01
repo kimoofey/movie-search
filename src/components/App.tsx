@@ -4,26 +4,30 @@ import Header from "../view/Header";
 import Search from "./Search";
 import Movie from "../view/Movie";
 import {inject, observer} from "mobx-react";
+import {MovieType} from "../types/MovieTypes";
+import {InjectedProps} from "../types/AppPropsInterface";
 
 @inject('rootStore')
 @observer
 class App extends Component {
+    get injected() {
+        return this.props as InjectedProps;
+    }
+
     render() {
-        // @ts-ignore
-        const {MainStore} = this.props.rootStore;
+        const {loading, errorMessage, movies} = this.injected.rootStore.MainStore;
         return (
             <div className="App">
-                <Header text='HOOKED'/>
+                <Header text='React & MobX'/>
                 <Search/>
                 <p className='App-intro'>Sharing a few of our favourite movies</p>
                 <div className='movies'>
-                    {MainStore.loading && !MainStore.errorMessage ? (
-                        <span>loading...</span>
-                    ) : MainStore.errorMessage ? (
-                        <div className='errorMessage'>{MainStore.errorMessage}</div>
+                    {loading && !errorMessage ? (
+                        <p className='loading-msg'>loading...</p>
+                    ) : errorMessage ? (
+                        <div className='errorMessage'>{errorMessage}</div>
                     ) : (
-                        // @ts-ignore
-                        MainStore.movies ? MainStore.movies.map((movie, index) => (
+                        movies ? movies.map((movie: MovieType, index: number) => (
                             <Movie key={`${index}-${movie.Title}`} movie={movie}/>
                         )) : null
                     )}

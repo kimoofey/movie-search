@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import {inject} from "mobx-react";
+import {InjectedProps} from "../types/SearchPropsInterface";
 
 @inject('rootStore')
 class Search extends Component {
+    get injected() {
+        return this.props as InjectedProps;
+    }
+
     search(searchValue: string) {
-        // @ts-ignore
-        const {MainStore} = this.props.rootStore;
+        const {MainStore} = this.injected.rootStore;
         MainStore.searchRequest();
         axios(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
             .then(jsonResponse => {
@@ -20,15 +24,13 @@ class Search extends Component {
     };
 
     handleSearchInputChanges = (e: any) => {
-        // @ts-ignore
-        const {SearchStore} = this.props.rootStore;
+        const {SearchStore} = this.injected.rootStore;
         SearchStore.setSearchValue(e.target.value);
     };
 
     callSearchFunction = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        // @ts-ignore
-        const {searchValue} = this.props.rootStore.SearchStore;
+        const {searchValue} = this.injected.rootStore.SearchStore;
         this.search(searchValue);
     };
 
