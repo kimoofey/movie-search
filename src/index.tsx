@@ -5,8 +5,12 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "mobx-react";
 import MainStore from "./stores/MainStore";
+import SearchStore from "./stores/SearchStore";
 
-const rootStore = new MainStore();
+const rootStore = {
+    MainStore:  new MainStore(),
+    SearchStore: new SearchStore(),
+};
 
 ReactDOM.render(
     <Provider rootStore={rootStore}>

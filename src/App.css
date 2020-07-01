@@ -61,6 +61,10 @@
   color: rgb(161, 15, 15);
 }
 
+.loading-msg {
+  margin: auto;
+}
+
 .search {
   display: flex;
   flex-direction: row;
